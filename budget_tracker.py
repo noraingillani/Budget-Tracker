@@ -266,22 +266,22 @@ if not pd.DataFrame(st.session_state.transactions).empty:
     tab1, tab2, tab3 = st.tabs(["📈 Spending Analysis", "📅 Monthly Trends", "📋 Transaction History"])
     
     with tab1:
-    fig = px.pie(df[df['Type'] == 'Expense'], 
+        fig = px.pie(df[df['Type'] == 'Expense'], 
                  values='Amount', 
                  names='Category',
                  title="Expense Distribution by Category")
     
     # Update layout settings
-    fig.update_layout(
+        fig.update_layout(
         height=500,  # Set fixed height
         margin=dict(l=20, r=20, t=40, b=20),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         font=dict(color='white')
-    )
+        )
     
     # Show chart with updated config
-    st.plotly_chart(fig, 
+        st.plotly_chart(fig, 
                     use_container_width=True,
                     config={'displayModeBar': False})
     
