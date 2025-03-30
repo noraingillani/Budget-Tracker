@@ -103,14 +103,15 @@ st.markdown("""
     /* === Animated Title === */
     h1 {
         font-family: 'Poppins', sans-serif !important;
-        font-size: 3.5rem !important;
+        font-size: 2.8rem !important;
         font-weight: 800 !important;
-        background: linear-gradient(45deg, #00f2fe, #4facfe) !important;
+        color: #ffffff !important;
+        text-shadow: 0 0 15px rgba(79,172,254,0.7) !important;
+        margin: 0.5rem 0 !important;
+        padding: 15px 0 !important;
+        background: linear-gradient(45deg, #00f2fe 30%, #4facfe 70%) !important;
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
-        text-shadow: 0 0 30px rgba(79,172,254,0.5) !important;
-        margin-bottom: 20px !important;
-        padding: 10px 0 !important;
         border-bottom: 3px solid rgba(79,172,254,0.3) !important;
         display: inline-block !important;
         animation: titleFloat 2s ease-in-out infinite;
@@ -118,9 +119,26 @@ st.markdown("""
 
     @keyframes titleFloat {
         0% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
+        50% { transform: translateY(-3px); }
         100% { transform: translateY(0px); }
     }
+
+    /* ===== Subtitle Styles ===== */
+    [data-testid="stMarkdown"] p {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 1.2rem !important;
+        color: rgba(255,255,255,0.9) !important;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+        margin-bottom: 2rem !important;
+    }
+
+    /* ===== Ensure Content Visibility ===== */
+    .main .block-container {
+        backdrop-filter: none !important;
+    }
+
+    /* ===== Font Import ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Inter:wght@400;600&display=swap');
 
     /* === Custom Scrollbar === */
     ::-webkit-scrollbar {
@@ -205,7 +223,7 @@ with st.sidebar:
     st.session_state.budget = st.number_input("Monthly Budget ($)", min_value=0, step=100)
 
 st.markdown("""
-<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Inter:wght@400;600&display=swap' rel='stylesheet'>
 """, unsafe_allow_html=True)
 # Main Interface
 st.title("💰 Smart Budget Tracker")
