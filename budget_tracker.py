@@ -162,9 +162,16 @@ st.markdown("""
     /* === Chart Containers === */
     .stPlotlyChart {
         border-radius: 20px !important;
-        overflow: hidden;
+        overflow: visible !important;
         border: 1px solid rgba(255,255,255,0.1);
         background: rgba(255,255,255,0.05) !important;
+        min-height: 500px;
+    }
+
+    /* Ensure proper chart scaling */
+    .plot-container {
+        height: 100% !important;
+        width: 100% !important;
     }
 
     /* === Success Message Styling === */
@@ -259,11 +266,24 @@ if not pd.DataFrame(st.session_state.transactions).empty:
     tab1, tab2, tab3 = st.tabs(["📈 Spending Analysis", "📅 Monthly Trends", "📋 Transaction History"])
     
     with tab1:
-        fig = px.pie(df[df['Type'] == 'Expense'], 
-                     values='Amount', 
-                     names='Category',
-                     title="Expense Distribution by Category")
-        st.plotly_chart(fig, use_container_width=True)
+    fig = px.pie(df[df['Type'] == 'Expense'], 
+                 values='Amount', 
+                 names='Category',
+                 title="Expense Distribution by Category")
+    
+    # Update layout settings
+    fig.update_layout(
+        height=500,  # Set fixed height
+        margin=dict(l=20, r=20, t=40, b=20),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='white')
+    )
+    
+    # Show chart with updated config
+    st.plotly_chart(fig, 
+                    use_container_width=True,
+                    config={'displayModeBar': False})
     
     with tab2:
         monthly_data = df.groupby(['Month', 'Type'])['Amount'].sum().reset_index()
