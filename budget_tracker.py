@@ -13,111 +13,142 @@ from datetime import datetime
 # Custom CSS
 st.markdown("""
 <style>
-    /* Main container styling */
+    /* === Base Styles === */
+    * {
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* === Main Container === */
     .main {
-        background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+        background: #0f0f1a;
+        background: linear-gradient(155deg, #0f0f1a 0%, #1a1a2f 100%);
     }
-    
-    /* Sidebar with glassmorphism effect */
+
+    /* === Glassmorphism Sidebar === */
     [data-testid=stSidebar] {
-        background: rgba(40, 70, 110, 0.85) !important;
-        backdrop-filter: blur(12px) !important;
-        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+        background: rgba(25, 25, 50, 0.9) !important;
+        backdrop-filter: blur(15px) !important;
         border-right: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 5px 0 25px rgba(0,0,0,0.3);
     }
-    
-    /* Sidebar hover effects */
-    [data-testid=stSidebar] .stButton button {
-        transition: all 0.3s ease;
-        border: 2px solid rgba(255,255,255,0.2) !important;
-    }
-    
-    [data-testid=stSidebar] .stButton button:hover {
-        transform: translateY(-2px);
-        background: rgba(255,255,255,0.1) !important;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-    
-    /* Metric cards with neumorphic design */
-    [data-testid="metric-container"] {
-        background: linear-gradient(145deg, #ffffff, #f8f9fa) !important;
-        border-radius: 15px !important;
-        box-shadow: 8px 8px 16px #d9d9d9, 
-                   -8px -8px 16px #ffffff !important;
-        padding: 20px !important;
-        margin: 10px 0;
+
+    /* === Neon Accent Elements === */
+    .stButton>button {
+        background: linear-gradient(45deg, #00f2fe, #4facfe) !important;
         border: none !important;
-        transition: all 0.3s ease;
+        color: white !important;
+        border-radius: 12px !important;
+        padding: 12px 24px !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 15px rgba(79,172,254,0.3) !important;
     }
-    
+
+    .stButton>button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(79,172,254,0.5) !important;
+    }
+
+    /* === Holographic Metric Cards === */
+    [data-testid="metric-container"] {
+        background: rgba(255,255,255,0.05) !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+        border-radius: 20px !important;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    [data-testid="metric-container"]::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(79,172,254,0.1), transparent);
+        transform: rotate(45deg);
+        animation: hologram 6s linear infinite;
+    }
+
     [data-testid="metric-container"]:hover {
         transform: translateY(-5px);
-        box-shadow: 12px 12px 24px #d1d1d1, 
-                   -12px -12px 24px #ffffff !important;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3) !important;
     }
-    
-    /* Progress bar styling */
+
+    /* === Animated Input Fields === */
+    .stTextInput input, .stNumberInput input, .stDateInput input, .stSelectbox select {
+        background: rgba(255,255,255,0.05) !important;
+        border: 1px solid rgba(255,255,255,0.2) !important;
+        color: white !important;
+        border-radius: 12px !important;
+        padding: 12px 16px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .stTextInput input:focus, .stNumberInput input:focus, .stDateInput input:focus {
+        border-color: #4facfe !important;
+        box-shadow: 0 0 0 3px rgba(79,172,254,0.2) !important;
+        background: rgba(79,172,254,0.05) !important;
+    }
+
+    /* === Cyberpunk Progress Bar === */
     .stProgress > div > div > div {
-        background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%) !important;
+        background: linear-gradient(90deg, #ff61d7 0%, #7c4dff 100%) !important;
         border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 0 15px rgba(124,77,255,0.3);
     }
-    
-    /* Custom scrollbar */
+
+    /* === Animated Title === */
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700 !important;
+        background: linear-gradient(45deg, #00f2fe, #4facfe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 30px rgba(79,172,254,0.3);
+        animation: titleGlow 2s ease-in-out infinite alternate;
+    }
+
+    /* === Custom Scrollbar === */
     ::-webkit-scrollbar {
         width: 8px;
+        background: rgba(0,0,0,0.2);
     }
-    
-    ::-webkit-scrollbar-track {
-        background: rgba(0,0,0,0.05);
-    }
-    
+
     ::-webkit-scrollbar-thumb {
         background: linear-gradient(45deg, #4facfe, #00f2fe);
         border-radius: 4px;
     }
-    
-    /* Data table styling */
-    [data-testid="stDataFrame"] {
+
+    /* === Keyframe Animations === */
+    @keyframes hologram {
+        0% { transform: rotate(45deg) translate(-30%, -30%); }
+        100% { transform: rotate(45deg) translate(30%, 30%); }
+    }
+
+    @keyframes titleGlow {
+        0% { text-shadow: 0 0 20px rgba(79,172,254,0.3); }
+        100% { text-shadow: 0 0 40px rgba(79,172,254,0.6); }
+    }
+
+    /* === Chart Containers === */
+    .stPlotlyChart {
+        border-radius: 20px !important;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.05) !important;
+    }
+
+    /* === Success Message Styling === */
+    .stAlert {
         border-radius: 15px !important;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important;
-        border: 1px solid rgba(0,0,0,0.05) !important;
-    }
-    
-    /* Input field styling */
-    .stTextInput input, .stNumberInput input, .stDateInput input {
-        border: 2px solid rgba(0,0,0,0.1) !important;
-        border-radius: 8px !important;
-        transition: all 0.3s ease !important;
-    }
-    
-    .stTextInput input:focus, .stNumberInput input:focus, .stDateInput input:focus {
-        border-color: #4facfe !important;
-        box-shadow: 0 0 0 3px rgba(79,172,254,0.2) !important;
-    }
-    
-    /* Custom header styling */
-    h1 {
-        font-family: 'Segoe UI', sans-serif;
-        font-weight: 700 !important;
-        color: #2c3e50 !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
-        letter-spacing: -0.5px !important;
-    }
-    
-    /* Floating animation for main title */
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-        100% { transform: translateY(0px); }
-    }
-    
-    h1 {
-        animation: float 3s ease-in-out infinite;
+        background: rgba(76,175,80,0.15) !important;
+        border: 1px solid #4CAF50 !important;
     }
 </style>
 """, unsafe_allow_html=True)
-
 # Initialize Session State
 if 'transactions' not in st.session_state:
     st.session_state.transactions = []
