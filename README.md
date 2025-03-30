@@ -14,7 +14,6 @@ Interactive budget tracking application with:
 
 ## 🚀 Installation
 ```bash
-git clone [your-repo-link]
 cd budget-tracker
 pip install -r requirements.txt
 streamlit run app.py
