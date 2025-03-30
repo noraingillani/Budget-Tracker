@@ -105,15 +105,12 @@ st.markdown("""
         font-family: 'Poppins', sans-serif !important;
         font-size: 2.8rem !important;
         font-weight: 800 !important;
-        color: #ffffff !important;
+        color: #4facfe !important;
         text-shadow: 0 0 15px rgba(79,172,254,0.7) !important;
         margin: 0.5rem 0 !important;
         padding: 15px 0 !important;
-        background: linear-gradient(45deg, #00f2fe 30%, #4facfe 70%) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
         border-bottom: 3px solid rgba(79,172,254,0.3) !important;
-        display: inline-block !important;
+        display: block !important;
         animation: titleFloat 2s ease-in-out infinite;
     }
 
@@ -223,11 +220,20 @@ with st.sidebar:
     st.session_state.budget = st.number_input("Monthly Budget ($)", min_value=0, step=100)
 
 st.markdown("""
-<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Inter:wght@400;600&display=swap' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap' rel='stylesheet'>
 """, unsafe_allow_html=True)
 # Main Interface
-st.title("💰 Smart Budget Tracker")
-st.markdown("Track your finances with interactive visualizations and real-time insights")
+st.markdown("""
+<h1 style='text-align: left; padding: 20px 0; margin: 0;'>
+    💰 Smart Budget Tracker
+</h1>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div style='font-family: "Inter", sans-serif; font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: 2rem;'>
+    Track your finances with interactive visualizations and real-time insights
+</div>
+""", unsafe_allow_html=True)
 
 # Metrics
 income, expenses, balance = calculate_metrics()
