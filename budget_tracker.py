@@ -102,13 +102,24 @@ st.markdown("""
 
     /* === Animated Title === */
     h1 {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700 !important;
-        background: linear-gradient(45deg, #00f2fe, #4facfe);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0 0 30px rgba(79,172,254,0.3);
-        animation: titleGlow 2s ease-in-out infinite alternate;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 3.5rem !important;
+        font-weight: 800 !important;
+        background: linear-gradient(45deg, #00f2fe, #4facfe) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        text-shadow: 0 0 30px rgba(79,172,254,0.5) !important;
+        margin-bottom: 20px !important;
+        padding: 10px 0 !important;
+        border-bottom: 3px solid rgba(79,172,254,0.3) !important;
+        display: inline-block !important;
+        animation: titleFloat 2s ease-in-out infinite;
+    }
+
+    @keyframes titleFloat {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+        100% { transform: translateY(0px); }
     }
 
     /* === Custom Scrollbar === */
