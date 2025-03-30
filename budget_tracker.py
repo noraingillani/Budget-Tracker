@@ -204,6 +204,9 @@ with st.sidebar:
     st.header("🎯 Set Monthly Budget")
     st.session_state.budget = st.number_input("Monthly Budget ($)", min_value=0, step=100)
 
+st.markdown("""
+<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap' rel='stylesheet'>
+""", unsafe_allow_html=True)
 # Main Interface
 st.title("💰 Smart Budget Tracker")
 st.markdown("Track your finances with interactive visualizations and real-time insights")
