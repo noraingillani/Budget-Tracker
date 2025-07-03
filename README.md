@@ -33,7 +33,7 @@ pip install -r requirements.txt
 streamlit run budget_tracker.py
 ```
 
-📂 Project Structure
+##📂 Project Structure
 ```
 📦 smart-budget-tracker/
 ├── budget_tracker.py        # Streamlit application logic & custom CSS
@@ -41,35 +41,25 @@ streamlit run budget_tracker.py
 ├── README.md                # This file
 ```
 
-📸 UI Preview
-Neon-glassmorphism themed UI with animated titles, budget metrics, and interactive tabs.
+## 📸 UI Preview
 
-💼 Budget Overview	📊 Charts	📋 Transaction History
+> **Neon-glassmorphism themed UI** with animated titles, glowing budget metrics, and interactive tabs.
 
-🧪 Technologies Used
-Streamlit
+| 💼 **Budget Overview** | 📊 **Charts** | 📋 **Transaction History** |
+|------------------------|---------------|-----------------------------|
+| ![Overview](https://via.placeholder.com/280x160?text=Overview+Preview) | ![Charts](https://via.placeholder.com/280x160?text=Charts+Preview) | ![History](https://via.placeholder.com/280x160?text=History+Preview) |
 
-Plotly
+---
 
-Pandas
+## 🧪 Technologies Used
 
-Custom CSS Styling
+- 🚀 **Streamlit** – For rapid UI development  
+- 📊 **Plotly** – For stunning data visualizations  
+- 🐼 **Pandas** – For data handling and analysis  
+- 🎨 **Custom CSS** – Neon-glassmorphism aesthetic with responsive layout
 
-📈 Future Improvements
-📥 CSV upload/download for transaction history
+---
 
-🛡️ User authentication
+> _“Track smarter. Spend wiser.”_  
+> — **Smart Budget Tracker**
 
-☁️ Persistent cloud database integration
-
-📆 Weekly/Yearly analysis views
-
-📬 Contact
-For queries or collaboration:
-
-Norain Gillani
-📧 Email: norain.gillani@example.com
-🌐 GitHub: @your-username
-
-"Track smarter. Spend wiser."
-— Smart Budget Tracker
