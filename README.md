@@ -47,7 +47,7 @@ streamlit run budget_tracker.py
 
 | 💼 **Budget Overview** | 📊 **Charts** | 📋 **Transaction History** |
 |------------------------|---------------|-----------------------------|
-| ![Overview](https://via.placeholder.com/280x160?text=Overview+Preview) | ![Charts](https://via.placeholder.com/280x160?text=Charts+Preview) | ![History](https://via.placeholder.com/280x160?text=History+Preview) |
+| ![Overview](https://via.placeholder.com/280x160?text=overview+Preview) | ![Charts](https://via.placeholder.com/280x160?text=charts+Preview) | ![History](https://via.placeholder.com/280x160?text=history+Preview) |
 
 ---
 
