@@ -47,7 +47,7 @@ streamlit run budget_tracker.py
 
 | 💼 Budget Overview | 📊 Charts | 📋 Transaction History |
 |--------------------|----------|-------------------------|
-| ![Overview](https://raw.githubusercontent.com/noraingillani/smart-budget-tracker/main/overview.png) | ![Charts](https://raw.githubusercontent.com/noraingillani/smart-budget-tracker/main/chart.png) | ![History](https://raw.githubusercontent.com/noraingillani/smart-budget-tracker/main/history.png) |
+| ![Overview](https://raw.githubusercontent.com/noraingillani/Budget-Tracker/main/overview.png) | ![Charts](https://raw.githubusercontent.com/noraingillani/Budget-Tracker/main/chart.png) | ![History](https://raw.githubusercontent.com/noraingillani/Budget-Tracker/main/history.png) |
 
 ---
 
