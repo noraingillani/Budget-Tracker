@@ -49,6 +49,8 @@ streamlit run budget_tracker.py
 |--------------------|----------|-------------------------|
 | ![Overview](https://raw.githubusercontent.com/noraingillani/Budget-Tracker/main/overview.png) | ![Charts](https://raw.githubusercontent.com/noraingillani/Budget-Tracker/main/chart.png) | ![History](https://raw.githubusercontent.com/noraingillani/Budget-Tracker/main/history.png) |
 
+📌 Visit live app here: budget-tracker.streamlit.app
+
 ---
 
 ## 🧪 Technologies Used
