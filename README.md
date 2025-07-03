@@ -45,9 +45,9 @@ streamlit run budget_tracker.py
 
 > **Neon-glassmorphism themed UI** with animated titles, glowing budget metrics, and interactive tabs.
 
-| 💼 **Budget Overview** | 📊 **Charts** | 📋 **Transaction History** |
-|------------------------|---------------|-----------------------------|
-| ![Overview](https://via.placeholder.com/280x160?text=overview+Preview) | ![Charts](https://via.placeholder.com/280x160?text=charts+Preview) | ![History](https://via.placeholder.com/280x160?text=history+Preview) |
+| 💼 Budget Overview | 📊 Charts | 📋 Transaction History |
+|--------------------|----------|-------------------------|
+| ![Overview](https://raw.githubusercontent.com/noraingillani/smart-budget-tracker/main/overview.png) | ![Charts](https://raw.githubusercontent.com/noraingillani/smart-budget-tracker/main/chart.png) | ![History](https://raw.githubusercontent.com/noraingillani/smart-budget-tracker/main/history.png) |
 
 ---
 
