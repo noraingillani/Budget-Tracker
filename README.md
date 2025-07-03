@@ -2,7 +2,7 @@
 
 **Course:** AF3005 – Programming for Finance  
 **Instructor:** Dr. Usama Arshad  
-**Developer:** [Your Name]
+**Developer:** Norain Gillani
 
 ## 📱 App Overview
 Interactive budget tracking application with:
