@@ -49,7 +49,7 @@ streamlit run budget_tracker.py
 |--------------------|----------|-------------------------|
 | ![Overview](https://raw.githubusercontent.com/noraingillani/Budget-Tracker/main/overview.png) | ![Charts](https://raw.githubusercontent.com/noraingillani/Budget-Tracker/main/chart.png) | ![History](https://raw.githubusercontent.com/noraingillani/Budget-Tracker/main/history.png) |
 
-📌 Visit live app here: budget-tracker.streamlit.app
+📌 Visit live app here: [budget-tracker.streamlit.app](https://budget-tracker-jbcyapp45mevy7zqgqu3ljn.streamlit.app/)
 
 ---
 
